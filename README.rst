@@ -1,6 +1,6 @@
-===============================
+===============
 SMS for Pyramid
-===============================
+===============
 
 .. image:: https://img.shields.io/pypi/v/pyramid_sms.svg
         :target: https://pypi.python.org/pypi/pyramid_sms
@@ -13,7 +13,7 @@ SMS for Pyramid
         :alt: Documentation Status
 
 
-SMS services for Pyramid framework.
+SMS services for `Pyramid <http://trypyramid.com>`_ framework.
 
 * Free software: ISC license
 * Documentation: https://pyramid_sms.readthedocs.org.
@@ -23,9 +23,7 @@ Features
 
 * Configurable SMS backend
 
-* Send outbound SMS using Twilio
-
-* Dummy backend for unit testing
+* Send outbound SMS using `Twilio <https://twilio.com>`_ or dummy backend for unit testing
 
 * Asynchronous operations that do not block HTTP response with `Websauna <https://websauna.org>`_
 
