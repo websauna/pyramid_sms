@@ -24,16 +24,13 @@ test_requirements = [
     "webtest"
 ]
 
-if os.environ.get("TRAVIS"):
-    extras_require = None
-else:
-    extras_require = {
-        'twilio': ["twilio"],
-    },
+extras_require = {
+    'twilio': ["twilio"],
+}
 
 setup(
     name='pyramid_sms',
-    version_format='{tag}.{commitcount}+{gitsha}',
+    version='0.1.0',
     description="SMS service framework for Pyramid",
     long_description=readme + '\n\n' + history,
     author="Mikko Ohtamaa",
@@ -54,19 +51,15 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: ISC License (ISCL)',
         'Natural Language :: English',
-        "Programming Language :: Python :: 2",
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
     setup_requires=[
         "pytest-runner",
-        'setuptools-git >= 0',
-        'setuptools-git-version',
+        # 'setuptools-git >= 0',
+        # 'setuptools-git-version',
     ],
     tests_require=test_requirements,
     extras_require=extras_require,
