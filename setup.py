@@ -23,6 +23,13 @@ test_requirements = [
     "webtest"
 ]
 
+if os.environ.get("TRAVIS"):
+    extras_require = None
+else:
+    extras_require = {
+        'twilio': ["twilio"],
+    },
+
 setup(
     name='pyramid_sms',
     version_format='{tag}.{commitcount}+{gitsha}',
@@ -61,7 +68,6 @@ setup(
         'setuptools-git-version',
     ],
     tests_require=test_requirements,
-    extras_require={
-        'twilio': ["twilio"],
-    },
+    extras_require=extras_require,
 )
+
