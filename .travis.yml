@@ -5,13 +5,13 @@ env:
 install: pip install -U tox
 script: tox
 
-#deploy:
-#  provider: pypi
-#  distributions: sdist bdist_wheel
-#  user: miohtama
-#  password:
-#    secure: mpWMBpX/s2z1V/KgWISpk0WdlT4ELPCTMi9Ly4CxpMfZ2NfB6B8iROmjDHAXtituMqTUoQHcFFUh32arOulvZiil2WSjDKf9RPoCP4hnzr7IRWWwV/Bj7OP7KNoYPhpaf4Z893+ODXwUrThxsMCrcsaQ95vxDWiz64ehFvuGfj8XKYfj72EE0BGmnqhYDE1MLgcSsGqmKYL1+YJptHHQzy37pKVBxtJBWLf1mXrq4mYYBIGokmHP2/kMCIyWz8x4oKTv053DK6NpkF08ipSoZ26kru+ZPGV73Fdv7D6M+QnRtP2tPrmL4sYLsA5Iwx1BkxX28Iv3r30L3ZSHYkdjiwk2xshKt7N82/gdBgTnkCSUvNQN/8CpfwQl7xBmaJtp50uJuxSUpBnJnOvE1vrgGUecn/AC6l1sB+ri7Fq36RzAYK+j8flpBGFNbe6k37HAHtXyzHvcBRL/QQO0DS3Dbc0PZZDUhomBr4VjuGsFop9+S5/Z4Fd3gxCNGOcjIWD8Zzl/aJRj/DypmnKyglJQIUgCtig5e18DEw44yTPOv5izcrBly/a2CioE9MZpYQoBt6DHRlBYIjQcL2RT8WwHXuClbeb2lsEya4RJ4R8IRDB4sT0g9EW2gpHsH/TBPHbkl9NUvn0T0Q1XLDa5TjbkvQhT+wwriiJNGaiuFap5/hc=
-#  on:
-#    tags: true
-#    repo: miohtama/pyramid_sms
-#    condition: $TOXENV == py34
+deploy:
+  provider: pypi
+  distributions: sdist bdist_wheel
+  user: miohtama
+  password:
+    secure: mpWMBpX/s2z1V/KgWISpk0WdlT4ELPCTMi9Ly4CxpMfZ2NfB6B8iROmjDHAXtituMqTUoQHcFFUh32arOulvZiil2WSjDKf9RPoCP4hnzr7IRWWwV/Bj7OP7KNoYPhpaf4Z893+ODXwUrThxsMCrcsaQ95vxDWiz64ehFvuGfj8XKYfj72EE0BGmnqhYDE1MLgcSsGqmKYL1+YJptHHQzy37pKVBxtJBWLf1mXrq4mYYBIGokmHP2/kMCIyWz8x4oKTv053DK6NpkF08ipSoZ26kru+ZPGV73Fdv7D6M+QnRtP2tPrmL4sYLsA5Iwx1BkxX28Iv3r30L3ZSHYkdjiwk2xshKt7N82/gdBgTnkCSUvNQN/8CpfwQl7xBmaJtp50uJuxSUpBnJnOvE1vrgGUecn/AC6l1sB+ri7Fq36RzAYK+j8flpBGFNbe6k37HAHtXyzHvcBRL/QQO0DS3Dbc0PZZDUhomBr4VjuGsFop9+S5/Z4Fd3gxCNGOcjIWD8Zzl/aJRj/DypmnKyglJQIUgCtig5e18DEw44yTPOv5izcrBly/a2CioE9MZpYQoBt6DHRlBYIjQcL2RT8WwHXuClbeb2lsEya4RJ4R8IRDB4sT0g9EW2gpHsH/TBPHbkl9NUvn0T0Q1XLDa5TjbkvQhT+wwriiJNGaiuFap5/hc=
+  on:
+    tags: true
+    repo: miohtama/pyramid_sms
+    condition: $TOXENV == py34
