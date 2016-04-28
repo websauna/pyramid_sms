@@ -36,7 +36,7 @@ Self-contained command line script example
 
 No INI settings file needed, you can copy-paste into Python shell:
 
-.. code-block::
+.. code-block:: python
 
     from zope.interface import implementer
 
