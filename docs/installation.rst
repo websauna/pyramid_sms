@@ -20,7 +20,7 @@ Configuring outbound SMS with Twilio
 
 In your Pyramid ``INI`` settings you can have
 
-.. code-block:: console
+.. code-block:: ini
 
     # Choose your SMS backend
     sms.service = pyramid_sms.twilio.TwilioService
