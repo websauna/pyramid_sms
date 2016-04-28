@@ -18,13 +18,10 @@ except pkg_resources.DistributionNotFound:
     HAS_WEBSAUNA = False
 
 from .interfaces import ISMSService
+from .interfaces import SMSConfigurationError
 from .events import SMSSent
 
 logger = logging.getLogger(__name__)
-
-
-class SMSConfigurationError(RuntimeError):
-    """Missing INI settings."""
 
 
 def _send_sms(request, receiver, text_body, sender, log_failure):
@@ -55,7 +52,7 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
             '''Dummy view to simulate outgoing SMS.'''
             send_sms(request, "+15551231234", "Test message")
 
-    :param receiver: Receiver's phone number as international format
+    :param receiver: Receiver's phone number as international format. You should normalize this number from all user input before passing in. See :py:mod:`pyramid_sms.utils` for examples.
     :param text_body: Outbound SMS body. Usually up to 1600 characters.
     :param sender: Envelope from number. Needs to be configured in the service. If none use default configured "sms.default_from".
     :param log_failure: If there is an exception from the SMS backend then log this.

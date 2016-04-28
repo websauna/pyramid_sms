@@ -9,12 +9,9 @@ In your Pyramid ``__init__`` add:
 
 .. code-block:: python
 
-    from pyramid_sms.twilio import TwilioSMSService
-    from pyramid_sms.interfaces import ISMSService
-    from pyramid.interfaces import IRequest
+    config.include("pyramid_sms")
 
 
-    config.registry.registerAdapter(factory=TwilioSMSService, required=(IRequest,), provided=ISMSService)
 
 API functions
 -------------

@@ -22,6 +22,12 @@ In your Pyramid ``INI`` settings you can have
 
 .. code-block:: console
 
+    # Choose your SMS backend
+    sms.service = pyramid_sms.twilio.TwilioService
+
+    # Use this in test.ini for your unit test run
+    # sms.service = pyramid_sms.dummy.DummySMSService
+
     # Twilio SMS number we have bought
     sms.default_sender = +555123123
 

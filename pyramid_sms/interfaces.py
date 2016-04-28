@@ -1,6 +1,10 @@
 from zope.interface import Interface
 
 
+class SMSConfigurationError(RuntimeError):
+    """Missing INI settings."""
+
+
 class ISMSService(Interface):
     """SMS service interface definition.
 
