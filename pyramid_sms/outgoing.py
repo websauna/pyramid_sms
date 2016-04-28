@@ -2,13 +2,12 @@
 
 import logging
 import pkg_resources
-from pyramid.renderers import render
 
+from pyramid.renderers import render
 from pyramid.settings import asbool
 
-
 try:
-    pkg_resources.get_distribution('plone.dexterity')
+    pkg_resources.get_distribution('websauna')
     from websauna.system.http import Request
     from websauna.system.task.celery import celery_app as celery
     from websauna.system.task import RequestAwareTask
