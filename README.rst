@@ -13,9 +13,10 @@ SMS for Pyramid
         :alt: Documentation Status
 
 
-SMS services for `Pyramid <http://trypyramid.com>`_ framework.
+SMS text messaging services for `Pyramid <http://trypyramid.com>`_ web framework.
 
 * Free software: ISC license
+
 * Documentation: https://pyramid_sms.readthedocs.org.
 
 Features
@@ -33,7 +34,6 @@ Author
 ------
 
 `Mikko Ohtamaa <https://opensourcehacker.com>`_.
-
 
 Credits
 -------
