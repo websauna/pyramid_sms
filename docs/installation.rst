@@ -37,7 +37,7 @@ In your Pyramid ``INI`` settings you can have
     sms.async = false
 
     # Account SID in Twilio account settings
-    sms.twilio_accout = xxx
+    sms.twilio_account = xxx
 
     # Auth Token in Twilio account settings
     sms.twilio_token = yyy
