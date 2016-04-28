@@ -15,8 +15,8 @@ At the command line:
 
     pip install "pyramid_sms[twilio]"
 
-Configuring Twilio
-------------------
+Configuring outbound SMS with Twilio
+------------------------------------
 
 In your Pyramid ``INI`` settings you can have
 

@@ -2,8 +2,8 @@
 Usage
 =====
 
-Setting up Twilio
------------------
+Setting up addon
+----------------
 
 In your Pyramid ``__init__`` add:
 
