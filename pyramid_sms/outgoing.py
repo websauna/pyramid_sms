@@ -54,7 +54,7 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
     :param receiver: Receiver's phone number as international format. You should normalize this number from all user input before passing in. See :py:mod:`pyramid_sms.utils` for examples.
     :param text_body: Outbound SMS body. Usually up to 1600 characters.
     :param sender: Envelope from number. Needs to be configured in the service. If none use default configured "sms.default_from".
-    :param log_failure: If there is an exception from the SMS backend then log this.
+    :param log_failure: If there is an exception from the SMS backend then log this using Python logging system. Otherwise raise the error as an exception.
     :param async: Force asynchronous operation through task subsystem. If ``None`` respect ``sms.async`` settings. If the operation is asynchronous, this function returns instantly and does not block HTTP request due to slow API calls to a third party service.
     :param user_dialog: This SMS is part of a dialog with a known user. Use this flag to log messages with the user in your conversation dashboard. Set ``False`` to two-factor auth tokens and such.
 
