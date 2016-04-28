@@ -45,7 +45,7 @@ setup(
     install_requires=requirements,
     license="ISCL",
     zip_safe=False,
-    keywords='pyramid_sms',
+    keywords='pyramid sms',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -54,6 +54,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Framework :: Pyramid',
     ],
     test_suite='tests',
     setup_requires=[
