@@ -16,7 +16,7 @@ class TwilioService:
     def __init__(self, request):
         self.request = request
 
-    def send_sms(self, receiver, sender, text_body, log_failure):
+    def send_sms(self, receiver, text_body, sender, log_failure):
         """Asynchronous call to Twilio.
 
         We execute the actual SMS sending (calling Twilio HTTP API) in the Celery worker process, so that we do not block HTTP response head. This is especially important if we send more than one SMS message per HTTP request.

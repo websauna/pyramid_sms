@@ -30,6 +30,10 @@ class SMSConfigurationError(RuntimeError):
 def _send_sms(request, receiver, text_body, sender, log_failure):
     """Perform actual SMS outbound operation through a configured service."""
     service = request.registry.queryAdapter(request, ISMSService)
+
+    if not service:
+        raise SMSConfigurationError("No SMS backend configured")
+
     service.send_sms(receiver, text_body, sender, log_failure)
 
 
