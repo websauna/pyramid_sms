@@ -25,7 +25,7 @@ test_requirements = [
 
 setup(
     name='pyramid_sms',
-    version='0.1.0',
+    version_format='{tag}.{commitcount}+{gitsha}',
     description="SMS service framework for Pyramid",
     long_description=readme + '\n\n' + history,
     author="Mikko Ohtamaa",
@@ -37,6 +37,11 @@ setup(
     package_dir={'pyramid_sms':
                  'pyramid_sms'},
     include_package_data=True,
+    # automatic version generation for development releases:
+    setup_requires=[
+        'setuptools-git >= 0',
+        'setuptools-git-version',
+    ],
     install_requires=requirements,
     license="ISCL",
     zip_safe=False,
