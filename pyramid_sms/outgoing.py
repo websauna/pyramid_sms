@@ -89,7 +89,7 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
     request.registry.notify(SMSSent(request, receiver, text_body, sender, user_dialog))
 
 
-def send_templated_sms(request: Request, template: str, context: dict, receiver: str, text_body: str, sender: str=None, log_failure: bool=True, async: bool=None, user_dialog: bool=False):
+def send_templated_sms(request: Request, template: str, context: dict, receiver: str, sender: str=None, log_failure: bool=True, async: bool=None, user_dialog: bool=False):
     """Send out a SMS that is constructed using a page template.
 
     Same as :py:meth:`pyramid_sms.outgoing.send_sms`, but uses templates instead of hardcoded messages.
