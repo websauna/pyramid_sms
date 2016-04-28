@@ -37,11 +37,6 @@ setup(
     package_dir={'pyramid_sms':
                  'pyramid_sms'},
     include_package_data=True,
-    # automatic version generation for development releases:
-    setup_requires=[
-        'setuptools-git >= 0',
-        'setuptools-git-version',
-    ],
     install_requires=requirements,
     license="ISCL",
     zip_safe=False,
@@ -60,7 +55,11 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
-    setup_requires=["pytest-runner"],
+    setup_requires=[
+        "pytest-runner",
+        'setuptools-git >= 0',
+        'setuptools-git-version',
+    ],
     tests_require=test_requirements,
     extras_require={
         'twilio': ["twilio"],
