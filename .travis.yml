@@ -2,7 +2,7 @@ language: python
 python: 3.4
 env:
 - TOXENV=py34
-install: pip install -U tox
+install: pip install -U tox twilio
 script: tox
 
 #deploy:
