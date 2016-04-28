@@ -1,7 +1,7 @@
 language: python
-python: 3.5
+python: 3.4
 env:
-- TOXENV=py35
+- TOXENV=py34
 install: pip install -U tox
 script: tox
 deploy:
@@ -13,4 +13,4 @@ deploy:
   on:
     tags: true
     repo: miohtama/pyramid_sms
-    condition: $TOXENV == py35
+    condition: $TOXENV == py34
