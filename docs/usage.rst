@@ -73,3 +73,8 @@ No INI settings file needed, you can copy-paste into Python shell:
     request = DummyRequest()
     to = normalize_us_phone_number("808 111 2222")
     send_sms(request, to, "Hello there")
+
+SMS login example
+-----------------
+
+`See this gist <https://gist.github.com/miohtama/69b5c365ec5e5ddd1d0b2ad2869460e8>`_ for a example how to implement Slack like "Magic link" like sign in with Websauna and Pyramid.
