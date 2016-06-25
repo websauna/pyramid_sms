@@ -31,7 +31,7 @@ extras_require = {
 
 setup(
     name='pyramid_sms',
-    version='0.1.1',
+    version='0.1.2.dev0',
     description="SMS service framework for Pyramid",
     long_description=readme + '\n\n' + history,
     author="Mikko Ohtamaa",
