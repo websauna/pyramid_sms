@@ -36,14 +36,6 @@ pyramid_sms.outgoing module
     :undoc-members:
     :show-inheritance:
 
-pyramid_sms.pyramid_sms module
-------------------------------
-
-.. automodule:: pyramid_sms.pyramid_sms
-    :members:
-    :undoc-members:
-    :show-inheritance:
-
 pyramid_sms.twilio module
 -------------------------
 
@@ -56,6 +48,14 @@ pyramid_sms.utils module
 ------------------------
 
 .. automodule:: pyramid_sms.utils
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+pyramid_sms.validators module
+-----------------------------
+
+.. automodule:: pyramid_sms.validators
     :members:
     :undoc-members:
     :show-inheritance:

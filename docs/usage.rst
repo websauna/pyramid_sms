@@ -22,6 +22,11 @@ API functions
 
 * :py:func:`pyramid_sms.utils.normalize_us_phone_number`
 
+Validators
+----------
+
+* :py:func:`pyramid_sms.validators.valid_us_phone_number`
+
 Events
 ------
 

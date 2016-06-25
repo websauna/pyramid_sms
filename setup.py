@@ -21,7 +21,8 @@ requirements = [
 
 test_requirements = [
     "pytest",
-    "webtest"
+    "webtest",
+    "colander"
 ]
 
 extras_require = {
