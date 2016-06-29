@@ -2,10 +2,10 @@
 History
 =======
 
-0.1.2 (unreleased)
+0.1.2 (2016-06-29)
 ------------------
 
-- Nothing changed yet.
+* Brown bag release (fixed tagging)
 
 
 0.1.1 (2016-06-25)
