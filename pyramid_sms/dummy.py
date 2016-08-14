@@ -17,3 +17,12 @@ class DummySMSService:
         # Store sent information in global variables, so that tests can verify it
         DummySMSService.last_outgoing = text_body
         DummySMSService.outgoing_count += 1
+
+    def get_last_message(self):
+        """Get the latest outgoing message.
+
+        Message queue is process global.
+
+        Userful for testing.
+        """
+        return DummySMSService.last_outgoing

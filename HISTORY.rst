@@ -5,12 +5,12 @@ History
 0.1.3 (Unreleased)
 ------------------
 
+* Update to Websauna new Celery APIs
 
 0.1.2 (2016-06-29)
 ------------------
 
-* Brown bag release (fixed tagging)
-
+* Added validation and normalization for international phone number
 
 0.1.1 (2016-06-25)
 ------------------

@@ -5,6 +5,7 @@ import pkg_resources
 
 from pyramid.renderers import render
 from pyramid.settings import asbool
+from pyramid_sms.utils import get_sms_backend
 
 try:
     pkg_resources.get_distribution('websauna')
@@ -25,15 +26,13 @@ logger = logging.getLogger(__name__)
 
 def _send_sms(request, receiver, text_body, sender, log_failure):
     """Perform actual SMS outbound operation through a configured service."""
-    service = request.registry.queryAdapter(request, ISMSService)
 
-    if not service:
-        raise SMSConfigurationError("No SMS backend configured")
-
+    service = get_sms_backend(request)
     service.send_sms(receiver, text_body, sender, log_failure)
 
 
 if HAS_WEBSAUNA:
+    # TODO: Find a smarter way to do this
     @celery.task(base=RequestAwareTask)
     def _send_sms_async(request, receiver, from_, text_body, log_failure):
         """Celery task to send asynchronously."""
