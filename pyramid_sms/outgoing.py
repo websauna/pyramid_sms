@@ -10,14 +10,14 @@ from pyramid_sms.utils import get_sms_backend
 try:
     pkg_resources.get_distribution('websauna')
     from websauna.system.http import Request
-    from websauna.system.task.celery import celery_app as celery
-    from websauna.system.task import RequestAwareTask
+    from websauna.system.task.tasks import task
+    from websauna.system.task.tasks import ScheduleOnCommitTask
     HAS_WEBSAUNA = False
 except pkg_resources.DistributionNotFound:
     from pyramid.request import Request
     HAS_WEBSAUNA = False
 
-from .interfaces import ISMSService
+
 from .interfaces import SMSConfigurationError
 from .events import SMSSent
 
@@ -26,16 +26,16 @@ logger = logging.getLogger(__name__)
 
 def _send_sms(request, receiver, text_body, sender, log_failure):
     """Perform actual SMS outbound operation through a configured service."""
-
     service = get_sms_backend(request)
     service.send_sms(receiver, text_body, sender, log_failure)
 
 
 if HAS_WEBSAUNA:
-    # TODO: Find a smarter way to do this
-    @celery.task(base=RequestAwareTask)
-    def _send_sms_async(request, receiver, from_, text_body, log_failure):
-        """Celery task to send asynchronously."""
+    # TODO: Factor this to a separate configurable module
+    @task(base=ScheduleOnCommitTask, bind=True)
+    def _send_sms_async(self, receiver, from_, text_body, log_failure):
+        """Celery task to send the SMS synchronously outside HTTP request proccesing."""
+        request = self.request.request
         _send_sms(request, receiver, from_, text_body, log_failure)
 
 
@@ -80,7 +80,7 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
     if async:
         if not HAS_WEBSAUNA:
             raise SMSConfigurationError("Async operations are only supported with Websauna framework")
-        _send_sms_async.apply_async(args=(request, receiver, text_body, sender, log_failure,))
+        _send_sms_async.apply_async(args=(receiver, text_body, sender, log_failure,))
     else:
         _send_sms(request, receiver, text_body, sender, log_failure)
 
