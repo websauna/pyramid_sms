@@ -2,7 +2,7 @@
 History
 =======
 
-0.1.3 (Unreleased)
+0.1.3 (2016-09-09)
 ------------------
 
 * Update to Websauna new Celery APIs
