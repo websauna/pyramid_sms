@@ -1,6 +1,6 @@
 import logging
 
-from twilio.rest import TwilioRestClient
+from twilio.rest import Client
 from zope.interface import implementer
 
 from .interfaces import ISMSService
@@ -33,7 +33,7 @@ class TwilioService:
 
         if account and token:
             try:
-                client = TwilioRestClient(account, token)
+                client = Client(account, token)
                 client.messages.create(to=receiver, from_=sender, body=text_body)
             except Exception as e:
                 if log_failure:
@@ -41,5 +41,4 @@ class TwilioService:
                     logger.exception(e)
                 else:
                     raise
-
 
