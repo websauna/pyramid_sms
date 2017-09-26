@@ -1,6 +1,10 @@
 import logging
 
-from twilio.rest import Client
+try:
+    from twilio.rest import Client
+except:
+    pass
+
 from zope.interface import implementer
 
 from .interfaces import ISMSService
