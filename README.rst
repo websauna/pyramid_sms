@@ -24,7 +24,7 @@ Features
 
 * Configurable SMS backend
 
-* Send outbound SMS using `Twilio <https://twilio.com>`_ or dummy backend for unit testing
+* Send outbound SMS using `Twilio <https://twilio.com>`_ , `OVH <https://www.ovh.com>`_ or dummy backend for unit testing
 
 * Asynchronous operations that do not block HTTP response with `Websauna <https://websauna.org>`_
 
