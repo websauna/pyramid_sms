@@ -66,4 +66,3 @@ class OvhService:
                     logger.exception(e)
                 else:
                     raise
-
