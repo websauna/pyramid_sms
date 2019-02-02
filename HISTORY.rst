@@ -5,7 +5,7 @@ History
 0.1.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Python 3.7 compatibility
 
 
 0.1.3 (2016-09-09)

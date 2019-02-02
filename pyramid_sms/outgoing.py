@@ -39,7 +39,7 @@ if HAS_WEBSAUNA:
         _send_sms(request, receiver, from_, text_body, log_failure)
 
 
-def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, log_failure: bool=True, async: bool=None, user_dialog: bool=False):
+def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, log_failure: bool=True, _async: bool=None, user_dialog: bool=False):
     """Send outgoing SMS message using the default configured SMS service.
 
     Example:
@@ -59,11 +59,11 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
 
     :raise SMSConfigurationError: If configuration settings are missing
     """
-    if async is None:
-        async = request.registry.settings.get("sms.async")
-        if async is None:
+    if _async is None:
+        _async = request.registry.settings.get("sms.async")
+        if _async is None:
             raise SMSConfigurationError("sms.async setting not defined")
-        async = asbool(async)
+        _async = asbool(_async)
 
     if sender is None:
         sender = request.registry.settings.get("sms.default_sender")
@@ -77,7 +77,7 @@ def send_sms(request: Request, receiver: str, text_body: str, sender: str=None, 
     logger.info("Queuing sending SMS to: %s, body: %s", receiver, text_body)
 
     # Put the actual Twilio operation async queue
-    if async:
+    if _async:
         if not HAS_WEBSAUNA:
             raise SMSConfigurationError("Async operations are only supported with Websauna framework")
         _send_sms_async.apply_async(args=(receiver, text_body, sender, log_failure,))
