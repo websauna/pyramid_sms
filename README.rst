@@ -5,8 +5,8 @@ SMS for Pyramid
 .. image:: https://img.shields.io/pypi/v/pyramid_sms.svg
         :target: https://pypi.python.org/pypi/pyramid_sms
 
-.. image:: https://img.shields.io/travis/miohtama/pyramid_sms.svg
-        :target: https://travis-ci.org/miohtama/pyramid_sms
+.. image:: https://img.shields.io/travis/websauna/pyramid_sms.svg
+        :target: https://travis-ci.org/websauna/pyramid_sms
 
 .. image:: https://readthedocs.org/projects/pyramid_sms/badge/?version=latest
         :target: https://readthedocs.org/projects/pyramid_sms/?badge=latest
